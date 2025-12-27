@@ -1,9 +1,10 @@
 # 🤖 AI Multi-LLM Chatbot 🌟
 
-A beautiful, interactive chatbot application that seamlessly integrates multiple Large Language Model (LLM) providers - OpenAI, Anthropic, and Ollama - with a stunning Streamlit frontend.
+A beautiful, interactive chatbot application that seamlessly integrates multiple Large Language Model (LLM) providers - OpenAI, Anthropic, and Ollama - with a stunning Streamlit frontend and LangSmith integration for advanced monitoring and tracing.
 
 ![Chatbot Interface](pics/01.png)
 ![Chat Example](pics/02.png)
+![LangSmith Tracking](pics/03.png)
 
 ## ✨ Features
 
@@ -15,6 +16,7 @@ A beautiful, interactive chatbot application that seamlessly integrates multiple
 - 👤 **Optional Login** - Use with or without authentication
 - 🤔 **Thinking Indicator** - Animated icon shows when AI is processing
 - 🗑️ **Clear History** - Reset your conversation anytime
+- 📊 **LangSmith Integration** - Track, monitor, and debug AI interactions in real-time
 
 ## 🚀 Quick Start
 
@@ -104,6 +106,31 @@ The app will open in your browser at `http://localhost:8501`
 - Click "Login" in the sidebar to personalize your experience
 - Or skip login and start chatting immediately!
 
+## 📊 LangSmith Monitoring
+
+This chatbot integrates with **LangSmith** for advanced AI interaction tracking and debugging. LangSmith provides:
+
+- 🔍 **Real-time Tracing** - Monitor every LLM call and response
+- 📈 **Performance Metrics** - Track latency, token usage, and costs
+- 🐛 **Debugging Tools** - Identify and fix issues in AI responses
+- 📊 **Analytics Dashboard** - Visualize usage patterns and insights
+
+### Setting up LangSmith (Optional)
+
+1. Sign up for a free account at [smith.langchain.com](https://smith.langchain.com)
+
+2. Add LangSmith configuration to your `.env` file:
+   ```env
+   LANGSMITH_TRACING=true
+   LANGSMITH_ENDPOINT=https://eu.api.smith.langchain.com
+   LANGSMITH_API_KEY=your_langsmith_api_key_here
+   LANGSMITH_PROJECT=ai-milti-llm-chatbot
+   ```
+
+3. View your traces in the LangSmith dashboard
+
+The screenshot above (03.png) shows the LangSmith interface tracking chatbot interactions, including request details, response times, and model outputs.
+
 ## 🏗️ Project Structure
 
 ```
@@ -120,7 +147,8 @@ ai-milti-llm-chatbot/
 │   └── llm_huggingface.py  # HuggingFace integration
 └── pics/
     ├── 01.png              # Frontend screenshot
-    └── 02.png              # Chat example screenshot
+    ├── 02.png              # Chat example screenshot
+    └── 03.png              # LangSmith tracking dashboard
 ```
 
 ## 🔧 Configuration
