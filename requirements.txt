@@ -1,0 +1,6 @@
+
+python-dotenv
+langchain_openai
+langchain_ollama
+transformers 
+langchain-anthropic
