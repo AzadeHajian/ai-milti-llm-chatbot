@@ -12,11 +12,19 @@ def __check_anthropic_api():
             raise ValueError("ANTHROPIC_API_KEY is not set in environment variables.")
         return anthropic_api_key
     except Exception as e:
-        print(f"Error checking ANTHROPIC_API_KEY: {e}")
-        return None
+        raise EnvironmentError("Failed to load ANTHROPIC_API_KEY from environment variables.") from e
     
 def llm_instance(model: str , temperature: float , timeout: int) -> ChatAnthropic:
     __check_anthropic_api()
-    if __check_anthropic_api() is True:
-        print("Anthropic API Key found successfully.")
     return ChatAnthropic(model=model, temperature=temperature, timeout=timeout)
+
+
+#if __name__ == "__main__":                                 
+## Example usage
+#   llm = llm_instance("claude-3-5-sonnet-20241022", temperature=0.7, timeout=60)
+#response = llm.invoke("Hello, how are you?")
+#print(response.content)
+# 
+  
+    
+    
